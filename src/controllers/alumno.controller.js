@@ -55,6 +55,7 @@ export const editarAlumno = async (req, res) => {
         const getId = req.params.id;
         const cuerpo = req.body;
         const alumnoE = await modeloAlumno.findByIdAndUpdate({ _id: getId }, cuerpo);
+        console.log(alumnoE)
         res.status(200).json(alumnoE);
     } catch (error) {
         res.status(404).json({
